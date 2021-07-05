@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+option go_package = "/pb";
+
+package xiusl.account;
+
+service MemberService {
+    rpc SendVerifyCode(SendVerifyCodeReq) returns (SendVerifyCodeResp) {}
+    rpc RegisterByMobile(RegisterByMobileReq) returns (RegisterByMobileResp) {}
+    rpc CreateMemberByMobile(CreateMemberByMobileReq) returns (CreateMemberByMobileResp) {}
+    rpc GetMemeberById(GetMemeberByIdReq) returns (GetMemeberByIdResp) {}
+}
+
+message Member {
+    uint64 id = 1;
+    string username = 2;
+    string mobile = 3;
+    string email = 4;
+    string password = 5;
+    string Status = 6;
+    string created_at = 7;
+}
+
+message CreateMemberByMobileReq {
+    string mobile = 1;
+    string password = 2;
+    string avatar = 3;
+}
+
+message CreateMemberByMobileResp {
+    Member member = 1;
+}
+
+message RegisterByMobileReq {
+    string mobile = 1;
+    uint32 code = 2;
+}
+
+message RegisterByMobileResp {
+    Member member = 1;
+    string token = 2;
+}
+
+message SendVerifyCodeReq {
+    string key = 1;
+}
+
+message SendVerifyCodeResp {
+    bool ok = 1;
+}
+
+message GetMemeberByIdReq {
+    int64 id = 1;
+}
+
+message GetMemeberByIdResp {
+    Member member = 1;
+}
+

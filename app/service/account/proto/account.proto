@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option go_package = "/pb";
+
+package like.account;
+
+service AccountService {
+    rpc CreateAccount(CreateAccountReq) returns (CreateAccountResp) {}
+}
+
+message Account {
+    uint64 id = 1;
+    int64 amount = 2;
+    int32 type = 3;
+    int32 Status = 4;
+    string updated_at = 5;
+    string created_at = 6;
+}
+
+message CreateAccountReq {
+    int64 member_id = 1;
+    int64 amount = 2;
+    int64 type = 3;
+}
+
+message CreateAccountResp {
+    Account account = 1;
+}
