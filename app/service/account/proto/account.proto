@@ -4,10 +4,6 @@ option go_package = "/pb";
 
 package like.account;
 
-service AccountService {
-    rpc CreateAccount(CreateAccountReq) returns (CreateAccountResp) {}
-}
-
 message Account {
     uint64 id = 1;
     int64 amount = 2;

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "/pb";
+
+package like.account;
+
+import "member.proto";
+import "account.proto";
+
+
+service Service {
+    rpc CreateAccount(CreateAccountReq) returns (CreateAccountResp) {}
+    rpc SendVerifyCode(SendVerifyCodeReq) returns (SendVerifyCodeResp) {}
+    rpc RegisterByMobile(RegisterByMobileReq) returns (RegisterByMobileResp) {}
+    rpc CreateMemberByMobile(CreateMemberByMobileReq) returns (CreateMemberByMobileResp) {}
+    rpc GetMemeberById(GetMemeberByIdReq) returns (GetMemeberByIdResp) {}
+}

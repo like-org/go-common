@@ -1,0 +1,10 @@
+version = "0.0.1"
+
+[gw]
+ip = "0.0.0.0"
+port = 80
+
+[gw.acc]
+url = "/acc"
+ip = "127.0.0.1"
+port = 5051

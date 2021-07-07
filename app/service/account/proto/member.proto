@@ -2,14 +2,7 @@ syntax = "proto3";
 
 option go_package = "/pb";
 
-package xiusl.account;
-
-service MemberService {
-    rpc SendVerifyCode(SendVerifyCodeReq) returns (SendVerifyCodeResp) {}
-    rpc RegisterByMobile(RegisterByMobileReq) returns (RegisterByMobileResp) {}
-    rpc CreateMemberByMobile(CreateMemberByMobileReq) returns (CreateMemberByMobileResp) {}
-    rpc GetMemeberById(GetMemeberByIdReq) returns (GetMemeberByIdResp) {}
-}
+package like.account;
 
 message Member {
     uint64 id = 1;
